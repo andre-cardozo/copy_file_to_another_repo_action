@@ -39,7 +39,8 @@ echo "Copying contents to git repo"
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 if [ -z "$INPUT_USE_RSYNC" ]
 then
-  cp -R ${{env.DOTNET_ROOT}}/myapp/release.zip "$DEST_COPY"
+  #cp -R ${{env.DOTNET_ROOT}}/myapp/release.zip "$DEST_COPY"
+  cp -R /home/runner/.dotnet/myapp/release.zip "$DEST_COPY"
 else
   echo "rsync mode detected"
   rsync -avrh "$INPUT_SOURCE_FILE" "$DEST_COPY"
