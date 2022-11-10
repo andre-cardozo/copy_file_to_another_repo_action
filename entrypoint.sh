@@ -62,6 +62,7 @@ fi
 echo "Adding git commit"
 git add .
 echo git status
+echo ls -l
 if git status | grep -q "Changes to be committed"
 then
   git commit --message "$INPUT_COMMIT_MESSAGE"
